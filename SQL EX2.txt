@@ -1,0 +1,14 @@
+Q.1 ANS-> select * from supplier order by city desc;
+
+Q.2 ANS-> select * from parts order by city,pname;
+
+Q.3 Ans-> select * from supplier where status between 10 and 20;
+
+Q.4 ANS-> select pname,weight from parts where weight not between 10 and 15;
+
+Q.5 ANS-> select pname from parts where pname like 's%';
+
+Q.6 ANS-> select sname,city from supplier where city like 'l%';
+
+Q.7 ANS-> select projname from project where projname like '__n%';
+ 

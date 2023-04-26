@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------Assignment 2-------------------------------------------------------------------------------
+
+Q1.Which field of the customer's table is primary key?
+Ans.Cnum is the primary column key.
+
+Q2.Which is the fourth column of customer table?
+Ans.Rating is the fourth column of customer table.
+
+Q3.What is another word for row?for column?
+Ans.Rows are generally called Tuple, entity.
+Columns are generally called  Attributes.
+
+Q4.Why isn't possible to see the first five rows of table?
+Ans. A.In DBMS data is stored in a file.
+B.Within a file the rows are stored sequentially.
+C.In RDBMS table is not a file every row is afile.
+D.The rows of atable are stored sequentially in the DB server HD.
+E.The rows of a table are scattered (fragmented) all over the DB server HD.
+F.In multiuser environment ,if multiple users are inserting rows simultaneously in the 
+  same table ,if rows were to be stored sequentially then it would be very slow.
+  In MySql ,when you insert a row wherever it finds the free HD space it will store row there 
+G.When you select form a table, the searching will always sequential 
+H.When you select from a table, the order of rows in output, depends on the row address, it will always be in the ascending
+order of row address.
+I.When you update a row, if the row length is incrfeasing if the adjacent free HD space is not available then the row address will change.
+J.Then when you select from that table, you may see the row at some other position.
+K.It's only int hte case of VARCHAR that the row length may increase or decrease.
+L.Hence it is not possible to see first five row of the tables.  
+  
