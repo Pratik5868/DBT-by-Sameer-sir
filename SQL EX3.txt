@@ -1,0 +1,19 @@
+Q.1 ANS-> Select CONCAT(UPPER(SUBSTRING(sname,1,1)),LOWER(SUBSTRING(sname,2))) AS Name from supplier;
+
+Q.2 ANS-> select upper(sname) from supplier;
+
+Q.3 ANS-> select lower(sname) from supplier;
+
+Q.4 ANS-> select lpad(sname,25,' ') from supplier;
+
+Q.5 ANS-> select replace(sname,'la','ro') from supplier;
+
+Q.6 ANS-> select replace(replace(sname,'A','O'),'R','L') from supplier;
+
+Q.7 ANS-> select sname,length(sname) from supplier;
+
+Q8.Ans-> select * from supplier where soundex(sname) = soundex('Bloke');
+
+Q9.ANS-> ?
+
+Q10.ANS-> select dayname(now());

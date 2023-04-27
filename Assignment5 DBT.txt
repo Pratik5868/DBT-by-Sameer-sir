@@ -1,0 +1,28 @@
+-----------------------------------------------------Assignment 5-------------------------------------------------------
+Q1.Write a query that will give you all orders for more than Rs1000.
+-> select * from orders where orders.Amt>1000;
+
+Q2.Write a query that will give you the names and the cities of all salespeople in london with a comission above 0.10?
+-> select Sname,City from salespeople where city='London' and Comm>0.10;
+
+Q3.Write a query on the customer table whose output will exclude all customers with a ratings<=100 unless they are located in Rome.
+->select * from customers where rating>100 && city!='Rome';
+
+Q4.What will be the output from the following query?
+->select * from orders where(amt<1000 || not(Odate='1990-10-03' && Onum>2003));
++------+---------+------------+------+------+
+| Onum | Amt     | Odate      | Cnum | Snum |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3003 |  767.19 | 1990-10-03 | 2001 | 1001 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3007 |   75.75 | 1990-10-04 | 2004 | 1002 |
+| 3008 | 4723.00 | 1990-10-05 | 2006 | 1001 |
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
++------+---------+------------+------+------+
+
+Q5.What will be the output from the following query?
+-> select * from orders where not((odate='1990-10-03' || snum>1006) && amt>=1500);
+Q6.What is the simpler way to write the following query.
+->select snum,sname,city,comm from salespeople where comm between 0.12 and 0.14;
