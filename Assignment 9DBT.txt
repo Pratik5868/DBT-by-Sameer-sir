@@ -1,0 +1,43 @@
+Q1.Write a query that lists each order number followed by the name of the customer who made the order.
+-> select distinct customers.cname,orders.onum from customers,orders where customers.snum = orders.snum;
+
+Q2.Write a query that gives the names of both the salesperson and the customer for each order along with the order number.
+select salespeople.sname,customers.cname,orders.onum from salespeople,customers,orders where
+customers.cnum = orders.cnum && salespeople.snum=orders.snum; 
+<--OR-->
+select salespeople.sname,customers.cname,orders.onum from orders
+inner join salespeople
+on salespeople.snum = orders.snum
+inner join customers
+on customers.cnum = orders.cnum;
+
+Q3.Write a query that produces all customers serviced by salespeople with a commission above 12%. Output the customers name the salespersons name, and the salespersons rate of commission?
+->select customers.cname,salespeople.sname,salespeople.comm from salespeople,customers where customers.snum =salespeople.snum  && salespeople.comm>0.12;
+3 rows in set, 1 warning (0.09 sec)
+
+<--OR-->
+
+select customers.cname,salespeople.sname,salespeople.comm from salespeople
+inner join customers
+on customers.snum = salespeople.snum where salespeople.comm>0.12;
+3 rows in set (0.00 sec)
+
+Q4.Write a query that calculates the amount of the salespersons commission on each order by
+a customer with a rating above 100?
+->Target:-  1.rating> 100
+2.count(cnum)
+3.sum(comm)
+
+select salespeople.sname,sum(salespeople.comm),customers.rating from orders
+inner join salespeople
+on salespeople.snum =orders.snum
+inner join customers
+on customers.cnum = orders.cnum
+where  customers.rating>100 group by sname
++---------+-----------------------+--------+
+| sname   | sum(salespeople.comm) | rating |
++---------+-----------------------+--------+
+| Serres  |                  0.39 |    300 |
+| Axelrod |                  0.10 |    200 |
+| Rifikin |                  0.30 |    300 |
++---------+-----------------------+--------+
