@@ -1,0 +1,40 @@
+Q1.Display the minimum status in the supplier table?
+->select min(status) from supplier;
+
+Q2.Display maximum weight in parts table?
+->select max(weight) from parts;
+
+Q3.Display the average weight of the parts?
+-> select avg(weight) from parts;
+
+Q4.Display the total quantity sold for the part p1?
+-> select * from spj where part_id='p1';
+
+Q5.Display the total quantity sold for each part?
+->select quantity from spj;
+
+Q6.Display the average quantity sold for each part?
+->select part_id,avg(quantity) from spj group by part_id;
+
+Q7.Display the maximum quantity sold for each part provided the maximum quantity is greater than 800?
+-> select part_id,max(quantity) from spj group by part_id having max(quantity)>100;
+
+Q8 Display the status and the count of suppliers with that status?
+-> select status,count(sname) from supplier group by status;
+
+Q9 Display the count of projects going on in diffrent cities?
+-> select  city,count(projname) from project group by city;
+
+Q10 what is the diffrence between count(status) and count(*)?
+-> count(status) will count the all rows for that particular column and count(*) will count all rows of table.
+
+Q11 Display the status and the count of suppliers with the status in the following format as shown below:
+-> select status,count(status) 'count',
+case
+when status=10 then 'Ten'
+when status=20 then 'Twenty'
+when status=30 then 'Thirty'
+else 'others'
+end'status'
+from supplier
+group by status;
