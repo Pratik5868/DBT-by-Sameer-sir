@@ -1,7 +1,14 @@
 Q1.Write a query thst produces all pairs of salespeople who are living in the same city.
 Exclude combinations of salespeople with themselves as well  as duplicate with the orders
 reversed.
-->
+->select  s1.sname,s2.city,s2.sname
+    -> from salespeople s1,salespeople s2
+    -> where s1.city  = s2.city   && s2.sname >s1.sname ;
++--------+--------+-------+
+| sname  | city   | sname |
++--------+--------+-------+
+| Motika | London | Peel  |
++--------+--------+-------+
 Q2.Write a query that produces the names and cities of all customers with the same rating 
 as Hoffman.
 -> select customers.cname,customers.city from customers where 
